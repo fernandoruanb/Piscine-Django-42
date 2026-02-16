@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 output=$(curl -sI $1 | grep Location | cut -d ' ' -f 2)
 
