@@ -1,4 +1,4 @@
-# Resolving (Translating) a bit.ly Link Using Bash
+# Resolving (Translating) a bit.ly Link Using Sh
 
 ![Search box / HTTP WWW illustration](https://cdn.pixabay.com/photo/2012/02/16/12/09/search-13476_1280.jpg)
 
@@ -45,20 +45,20 @@ We only need the HTTP headers — not the page content.
 
 So we use:
 
-```bash
+```sh
 curl -sI URL | grep Location | cut -d ' ' -f 2
 ```
 
 By this way, we can get our output. As we are using shellscript, we need to store it into a variable. In my
 example, I put into a variable called "output"
 
-```bash
+```sh
 output=$(curl -sI URL | grep Location | cut -d ' ' -f 2)
 ```
 
-Finally, we can print the content using the bash builtin command "echo"
+Finally, we can print the content using the sh builtin command "echo"
 
-```bash
+```sh
 echo "$output"
 ```
 
