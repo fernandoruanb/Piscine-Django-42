@@ -1,6 +1,6 @@
 # Resolving (Translating) a bit.ly Link Using Bash
 
-![URL Redirect Illustration](https://pixabay.com/illustrations/website-url-go-button-www-web-454460/)
+![Search box / HTTP WWW illustration](https://cdn.pixabay.com/photo/2012/02/16/12/09/search-13476_1280.jpg)
 
 ## Core Idea
 
@@ -62,7 +62,7 @@ Finally, we can print the content using the bash builtin command "echo"
 echo "$output"
 ```
 
-#Direct explanation
+# Direct explanation
 
 Bitly stores the mapping in a database, so the short link is not mathematically reversible.
 
