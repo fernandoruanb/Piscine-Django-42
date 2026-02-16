@@ -62,6 +62,13 @@ Finally, we can print the content using the sh builtin command "echo"
 echo "$output"
 ```
 
+# How to use
+
+```sh
+./myawesomescript.sh bit.ly/ABC
+```
+The example above is using an imaginary bit.ly URL only to be didatic
+
 # Direct explanation
 
 Bitly stores the mapping in a database, so the short link is not mathematically reversible.
