@@ -28,3 +28,5 @@ function puffin()
 The secret here is only checking each file and import them in the correct order. For example, the last function
 cannot have a clear dependence, then, it must be the first to be loaded. Next, the file1.js because that file calls
 the puffin function, already loaded. Following that strategy, we can solve the dependences correctly.
+
+We can solve it adding a javascript loader, but, in the rules of that exercise, we are forbidden to add another javascript or modify the original files.
