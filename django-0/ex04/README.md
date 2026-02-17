@@ -36,7 +36,7 @@ We can solve it adding a javascript loader, but, in the rules of that exercise, 
 We can put in the **\<head\>** tag the script
 
 ```html
-	<script src="./file4.js defer"></script>
+	<script src="./file4.js" defer></script>
 ```
 
 So, we import the js file and load it only after all HTML finished to be parsed, it because I put the attribute defer here.
