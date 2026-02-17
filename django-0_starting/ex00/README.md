@@ -27,7 +27,7 @@ def my_var():
 ## 2. Creating variables of different types
 
 ```python
-vars_ = [
+vars = [
     42,
     "42",
     "quarante-deux",
@@ -54,7 +54,7 @@ This list contains **9 values**, each with a different type:
 | `(42,)`           | `tuple` | Tuple with one element (comma is required) |
 | `set()`           | `set`   | Empty set                                  |
 
-The variable name `vars_` ends with an underscore to avoid conflict with Python’s built-in
+The variable name `vars` ends with an underscore to avoid conflict with Python’s built-in
 function `vars()`.
 
 ---
