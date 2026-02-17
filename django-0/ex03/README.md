@@ -1,3 +1,8 @@
+# Copy HTML Spier
+
+In that exercise we need to copy a HTML using the extracted CSS. In other words, we need to learn how to use the
+CSS and connect them to the tags in a HTML file. That is the challenge here.
+
 ## HTML overview: tags and attributes used in your snippet
 
 ### `<!DOCTYPE html>`
