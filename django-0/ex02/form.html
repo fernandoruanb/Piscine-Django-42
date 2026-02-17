@@ -12,11 +12,14 @@
 				display: flex;
 				text-align: center;
 				align-items: center;
+				background-color: #0A1F44;
 			}
 
 			form {
-				border: 2px solid #000;
+				border: 3px solid #000;
 				width: 300px;
+				background-color: #F4F4F4;
+				margin-top: 20px;
 			}
 
 			input {
@@ -40,23 +43,23 @@
 	</head>
 	<body>
 		<form id="contactForm" action="#" method="post">
-			<label for="firstname">Firstname:</label><br>
+			<label for="firstname"><strong>Firstname:</strong></label><br>
 			<input id="firstname" type="text" name="firstname" placeholder="Type your firstname here" required><br><br>
-			<label for="name">Name:</label><br>
+			<label for="name"><strong>Name:</strong></label><br>
 			<input id="name" type="text" name="name" placeholder="Type your name here" required><br><br>
-			<label for="phone">Phone:</label><br>
+			<label for="phone"><strong>Phone:</strong></label><br>
 			<input id="phone" type="tel" name="phone" placeholder="Type your phone here" required><br><br>
-			<label for="age">Age:</label><br>
+			<label for="age"><strong>Age:</strong></label><br>
 			<input id="age" type="number" name="age" placeholder="Age" min='0' max="120" required><br><br>
-			<label for="email">Email:</label><br>
+			<label for="email"><strong>Email:</strong></label><br>
 			<input id="email" type="email" name="email" placeholder="Type your e-mail here" required><br><br>
-			<label for="gender_male">Gender Male: </label>
+			<label for="gender_male"><strong>Gender Male: </strong></label>
 			<input id="gender_male" name="gender" type="radio" value="Male" required><br><br>
-			<label for="gender_female">Gender Female: </label>
+			<label for="gender_female"><strong>Gender Female: </strong></label>
 			<input id="gender_female" name="gender" type="radio" value="Female"><br><br>
-			<label for="gender_other">Gender Other: </label>
+			<label for="gender_other"><strong>Gender Other: </strong></label>
 			<input id="gender_other" name="gender" type="radio" value="Other"><br><br>
-			<label for="student">Student at 42: </label>
+			<label for="student"><strong>Student at 42: </strong></label>
 			<input id="student" name="student" type="checkbox" value="true"><br><br>
 			
 			<button type="submit" onclick="displayFormContents()">Send</button><br><br>
