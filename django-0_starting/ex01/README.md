@@ -164,6 +164,3 @@ This structure is exactly what `with` does internally.
 
 > **Always use `with` when working with files in Python.**
 > It is safer, cleaner, and prevents resource leaks without extra code.
-
-```
-```
