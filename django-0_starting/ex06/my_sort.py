@@ -34,5 +34,5 @@ def getTheRule(item):
 if __name__ == '__main__':
 	# lambda is an anonymous function just to return the next item, the value to order by it
 	ordered = dict(sorted(d.items(), key=lambda item: (int(item[1]), item[0])))
-	for key, value in ordered.items():
+	for key in ordered: # We do not need to use ordered.items() because we want only the key
 		print(f"{key}")
