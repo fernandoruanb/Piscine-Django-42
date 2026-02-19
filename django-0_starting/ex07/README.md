@@ -29,7 +29,7 @@ def getTheList():
 
 ```
 [
-  "$Hydrogen = $position:0, number:1, small: H, molar:1.00794, electron:1 $None ...",
+  "Hydrogen = position:0, number:1, small: H, molar:1.00794, electron:1 None ...",
   ...
 ]
 ```
@@ -50,14 +50,14 @@ def getTheJson(data):
 
 * Each line is split into two parts at the **first** `=`:
 
-  * left: element name (e.g. `"$Hydrogen"`)
+  * left: element name (e.g. `"Hydrogen"`)
   * right: everything after `=` (the fields chunk)
 * So `myJson` becomes something like:
 
 ```python
 {
-  "$Hydrogen": "$position:0, number:1, small: H, molar:1.00794, electron:1 $None...",
-  "$Helium":   "$position:1, number:2, small: He, molar:4.002602, electron:2 $None...",
+  "Hydrogen": "position:0, number:1, small: H, molar:1.00794, electron:1 None...",
+  "$Helium":   "position:1, number:2, small: He, molar:4.002602, electron:2 None...",
   ...
 }
 ```
@@ -70,7 +70,7 @@ def getTheJson(data):
 For each element, `value` is a **raw string** like:
 
 ```
-"$position:0, number:1, small: H, molar:1.00794, electron:1 $None $None"
+"position:0, number:1, small: H, molar:1.00794, electron:1 None None"
 ```
 
 You want to transform this into a dictionary like:
@@ -90,7 +90,7 @@ fields = {
 Take one chunk:
 
 ```
-value = "$position:0, number:1, small: H, molar:1.00794, electron:1 $None"
+value = "position:0, number:1, small: H, molar:1.00794, electron:1 None"
 ```
 
 #### 1) Split by comma → separate **field chunks**
@@ -101,11 +101,11 @@ for nextData in value.split(","):
 
 This produces pieces like:
 
-* `"$position:0"`
+* `"position:0"`
 * `" number:1"`
 * `" small: H"`
 * `" molar:1.00794"`
-* `" electron:1 $None"`
+* `" electron:1 None"`
 
 #### 2) Clean and split by `:` → separate **key/value**
 
@@ -159,35 +159,6 @@ doc = f"""
 ```
 
 That creates **one final HTML document string**, and you write it to `periodic_table.html`.
-
----
-
-## One important bug in your HTML interpolation
-
-Inside your `rows.append(...)` you wrote:
-
-```html
-<h4>${element}</h4>
-```
-
-That **`${...}` is JavaScript syntax**, not Python.
-
-In Python f-strings, it must be:
-
-```html
-<h4>{element}</h4>
-```
-
-Same for `number`, `small`, `molar`, `electron`:
-
-```html
-<li>No {number}</li>
-<li>{small}</li>
-<li>{molar}</li>
-<li>{electron} electron</li>
-```
-
-If you keep `$`, it will literally print `$Hydrogen`, `$1`, etc.
 
 ---
 

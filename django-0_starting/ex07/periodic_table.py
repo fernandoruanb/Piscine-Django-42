@@ -47,12 +47,12 @@ def mountHTML(data):
 			<table>
 				<tr>
 					<td style="border: 1px solid black; padding: 10px">
-						<h4>${element}</h4>
+						<h4>{element}</h4>
 						<ul>
-							<li>No ${number}</li>
-							<li>${small}</li>
-							<li>${molar}</li>
-							<li>${electron} electron</li>
+							<li>No {number}</li>
+							<li>{small}</li>
+							<li>{molar}</li>
+							<li>{electron} electron</li>
 						</ul>
 					</td>
 				</tr>
