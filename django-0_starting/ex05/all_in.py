@@ -14,14 +14,6 @@ capital_cities = {
 "CO": "Denver"
 }
 
-def findCapital(data):
-	if not data:
-		return None
-	for key, value in capital_cities.items():
-		if (key.lower() == data.lower()):
-			return value
-	return None
-
 def findSiglaCapital(data):
 	if not data:
 		return None
@@ -38,20 +30,12 @@ def findSiglaState(data):
 			return value
 	return None
 
-def findState(data):
-	if not data:
-		return None
-	for key,value in states.items():
-		if (key.lower() == data.lower()):
-			return key
-	return None
-
 def isCapitalCity(data):
 	if not data:
 		return None
 	for key,value in capital_cities.items():
 		if (value.lower() == data.lower()):
-			return key
+			return value
 	return None
 
 def isStateTarget(data):
@@ -82,16 +66,17 @@ def isValid(data):
 	isCapital = isCapitalCity(data)
 	isState = isStateTarget(data)
 	if (isCapital or isState):
+		# Get the official name
+		# Get the capital name by sigla
+		# Print
 		if (isState):
-			state = findState(isState)
-			sigla = findSiglaState(state)
+			sigla = findSiglaState(isState)
 			capital = findCapitalBySigla(sigla)
-			print(f"{capital} is the capital of {state}")
+			print(f"{capital} is the capital of {isState}")
 		else:
-			capital = findCapital(isCapital)
-			sigla = findSiglaCapital(capital)
+			sigla = findSiglaCapital(isCapital)
 			state = findStateBySigla(sigla)
-			print(f"{capital} is the capital of {state}")
+			print(f"{isCapital} is the capital of {state}")
 	else:
 		print(f"{data} is neither a capital city nor a state")
 
