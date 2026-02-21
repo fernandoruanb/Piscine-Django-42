@@ -30,7 +30,7 @@ class CoffeeMachine():
 		self.counter += 1 # I register the attempt to use the machine
 		#print(self.counter)
 		self.fail = random.random() >= 0.7
-		if (self.fail):
+		if (self.fail or not issubclass(drink, beverages.HotBeverage)):
 			return CoffeeMachine.EmptyCup()
 		#drink_to_serve = getattr(beverages, beverage) if the parameter is a string not a class
 		try:
