@@ -14,19 +14,22 @@ capital_cities = {
 "CO": "Denver"
 }
 
-def getCapitalByState(state):
-	try:
-		result = states[state]
-		result = capital_cities[result]
-		return result
-	except KeyError:
-		return None
+def getCapitalByState():
+    '''
+        That function tries to get the first argument the user typed in the shell as a state information.
+        Using that data we get the sigla and use the sigla to discover the capital relationated to the state
+        printing it on the screen. I cannot handle with lowercase
+    '''
+
+    if (len(sys.argv) < 2):
+        sys.exit(0)
+    try:
+        state = sys.argv[1]
+        sigla = states[state]
+        result = capital_cities[sigla]
+        print(result)
+    except KeyError:
+        print("Unknown state")
 
 if __name__ == '__main__':
-	if (len(sys.argv) < 2):
-		sys.exit(0)
-	result = getCapitalByState(sys.argv[1])
-	if not result:
-		print("Unknow state")
-	else:
-		print(result)
+    getCapitalByState()

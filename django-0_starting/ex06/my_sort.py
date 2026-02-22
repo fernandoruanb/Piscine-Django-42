@@ -21,18 +21,22 @@ d = {
 'Burton' : '1939',
 }
 
+def sortTheDictionary():
+    '''
+    That function was necessary to order everything. To make the ordered dictionary I needed to use
+    the native function sorted and specify the key by an anonymous function where it returns always
+    the year. But, if we have the same year, we can get conflict, then, in this case, I return the name
+    to order alphabetically. I have another example below
 
-# To explain the function, we can create one or put an anonymous one, using the lambda
+    def getTheRule(item):
+    name, year = item
+    return (int(year), name)
 
-"""
-def getTheRule(item):
-	name, year = item
-	return (int(year), name)
-"""
+    We can get the same behaviour using this example.
+    '''
+    ordered = dict(sorted(d.items(), key=lambda item: (int(item[1]), item[0])))
+    for key in ordered: # We do not need to use ordered.items() because we want only the key
+        print(f"{key}")
 
-# the function sorted 
 if __name__ == '__main__':
-	# lambda is an anonymous function just to return the next item, the value to order by it
-	ordered = dict(sorted(d.items(), key=lambda item: (int(item[1]), item[0])))
-	for key in ordered: # We do not need to use ordered.items() because we want only the key
-		print(f"{key}")
+    sortTheDictionary()

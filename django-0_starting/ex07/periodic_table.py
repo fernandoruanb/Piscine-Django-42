@@ -1,34 +1,41 @@
 import sys
 
-myPeriodicTable = []
-myJson = {}
-
 def getTheList():
-	with open("periodic_table.txt", "r") as periodicTable:
-		for line in periodicTable:
-			myPeriodicTable.append(line.strip()) #remove blank spaces and mess
+    '''
+    I made that function to read the file and get all the lines to be checked after thinking
+    in to build my myJson dictionary organized per element where I can get easily the name of
+    each element and extract the information of them
+    '''
+    with open("periodic_table.txt", "r") as periodicTable:
+        myPeriodicTable = []
+        for line in periodicTable:
+            myPeriodicTable.append(line.strip()) #remove blank spaces and mess
+        return (myPeriodicTable)
 
-def getTheJson(data):
-	if not data:
-		return None
-	for line in myPeriodicTable:
-		if '=' not in line or ':' not in line:
-			return None
-		element = line.split("=", 1)[0].strip()
-		myJsonUnit = line.split("=", 1)[1].strip()
-		myJson[element] = myJsonUnit
+def getTheJson(myPeriodicTable):
+    if not myPeriodicTable:
+        return None
+    myJson = {}
+    for line in myPeriodicTable:
+        if '=' not in line or ':' not in line:
+            return None
+        element = line.split("=", 1)[0].strip()
+        myJsonUnit = line.split("=", 1)[1].strip()
+        myJson[element] = myJsonUnit
+    return (myJson)
 
-def mountHTML(data):
-	if not data:
+def mountHTML():
+	myJson = getTheJson(getTheList())
+	if not myJson:
 		return None
 
 	rows = []
 
-	# we need to split each , and inside it we need to get : to separate field and data if the : exists
+	# we need to split each , and inside it we need to get : to separate field and myJson if the : exists
 	# we need to clean the None in the final of each line replacing the $ (final) to an empty string
 	# Finally, we finish the dictionary and we can get each position to create our HTML file
 
-	for element, value in data.items():
+	for element, value in myJson.items():
 		fields = {}
 		for nextData in value.split(","):
 			captured = nextData.strip().replace("$", "")
@@ -76,12 +83,11 @@ def mountHTML(data):
 		file.write(doc)
 
 def seeMyJson():
-	for key, value in myJson.items():
-		print(f"{key}: {value}")
+    '''
+    I made that function only to see the myJson dictionary all right
+    '''
+    for key, value in myJson.items():
+        print(f"{key}: {value}")
 
 if __name__ == '__main__':
-	getTheList()
-	getTheJson(myPeriodicTable)
-	mountHTML(myJson)
-	#seeMyJson()
-
+	mountHTML()

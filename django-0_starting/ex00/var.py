@@ -1,6 +1,12 @@
 def my_var():
 
-	vars = [
+    '''
+    That function created a list of vars to make simple the visualization printing
+    with just a loop for to see the variable and its type
+
+    '''
+
+    vars = [
 		42,
 		"42",
 		"quarante-deux",
@@ -12,8 +18,8 @@ def my_var():
 		set()
 	]
 
-	for var in vars:
-		print(f"{var} has a type {type(var)}")
+    for var in vars:
+        print(f"{var} has a type {type(var)}")
 
 if __name__ == '__main__':
 	my_var()

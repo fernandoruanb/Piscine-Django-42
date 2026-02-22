@@ -22,12 +22,16 @@ d = [
 ]
 
 def myBeautifulFunction(data):
-	dictionary = {};
-	for name, year in data:
-		dictionary[year] = name
-	return dictionary
+    '''
+    That function will get a list of tuples(immutable lists) and create a dictionary
+    where the key will be the year and the value the singer name
+
+    '''
+
+    dictionary = {};
+    for name, year in data:
+        dictionary[year] = name
+        print(f"{year}: {name}")
 
 if __name__ == "__main__":
-	dictionary = myBeautifulFunction(d)
-	for year, name in dictionary.items():
-		print(f"{year}: {name}")
+    myBeautifulFunction(d)
