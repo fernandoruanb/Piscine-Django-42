@@ -44,7 +44,15 @@ def isValid():
 
 	if len(sys.argv) != 2:
 		sys.exit(0)
-	listArgs = sys.argv[1].strip().split(",")
+	try:
+		listArgs = sys.argv[1].strip().split(",")
+	except IndexError:
+		print("Error: invalid index.")
+		sys.exit(1)
+	except OSError as error:
+		print("Error: I/O {error}.")
+		sys.exit(1)
+ 
 	for arg in listArgs:
 		test = arg.strip()
 		if not test:
