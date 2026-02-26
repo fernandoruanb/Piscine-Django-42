@@ -56,7 +56,8 @@ def mountHTML():
 					<td style="border: 1px solid black; padding: 10px">
 						<h4>{element}</h4>
 						<ul>
-							<li>No {number}</li>
+							<li>Atomic {number}</li>
+							<li>No {position}</li>
 							<li>{small}</li>
 							<li>{molar}</li>
 							<li>{electron} electron</li>
