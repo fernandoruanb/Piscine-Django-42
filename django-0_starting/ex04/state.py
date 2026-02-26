@@ -1,51 +1,66 @@
 import sys
 
-states = {
-"Oregon" : "OR",
-"Alabama" : "AL",
-"New Jersey": "NJ",
-"Colorado" : "CO"
-}
+def findState(capitalInput, states, capitals):
+	if (not capitalInput or not states or not capitals
+		or not isinstance(capitalInput, str)
+		or not isinstance(states, dict)
+		or not isinstance(capitals, dict)
+		or not states or not capitals):
+		return None
 
-capital_cities = {
-"OR": "Salem",
-"AL": "Montgomery",
-"NJ": "Trenton",
-"CO": "Denver"
-}
-
-def findTheCapitalSigla(capital):
-    '''
-    That function is useful to get the sigla of the target capital.
-    It is important to get the name of the related state.
-    '''
-    for key, target in capital_cities.items():
-        if (capital == target):
-            return key
-    return None
-
-def findTheStateByCapital(targetSigla):
-    '''
-    After getting the sigla, we can find easily the state information to show to the user.
-    '''
-    for key, sigla in states.items():
-        if (sigla == targetSigla):
-            return key
-    return None
+	capitalInput = capitalInput.strip()
+	for sig, city in capitals.items():
+		if (capitalInput.lower() == city.lower()):
+			for capital, si in states.items():
+				if (sig.lower() == si.lower()):
+					return capital
+	return None
+	
 
 def getCapitalByState():
-    '''
-    I made that function thinking about the communication between the dictionaries.
-    To solve it, I needed two functions, one to get the sigla by capital and another to find the correct state.
-    If I do not find the state, it does not exist. Then, I print "Unknown capital city", solving the problem.
-    '''
-    if len(sys.argv) < 2:
-        sys.exit(0)
-    result = findTheStateByCapital(findTheCapitalSigla(sys.argv[1]))
-    if result is not None:
-        print (result)
-    else:
-        print("Unknown capital city")
+	states = {
+		"Oregon" : "OR",
+		"Alabama" : "AL",
+		"New Jersey": "NJ",
+		"Colorado" : "CO"
+	}
+
+	capital_cities = {
+		"OR": "Salem",
+		"AL": "Montgomery",
+		"NJ": "Trenton",
+		"CO": "Denver"
+	}
+
+	if len(sys.argv) != 2:
+		sys.exit(1)
+
+	if (states is None or capital_cities is None
+		or not isinstance(states, dict) 
+		or not isinstance(capital_cities, dict)
+		or not states or not capital_cities):
+			return None
+
+	try:
+		result = findState(sys.argv[1], states, capital_cities)
+
+		if result is not None:
+			if (isinstance(result, str)):
+				result = result.strip()
+				print (result)
+		else:
+			print("Unknown capital city.")
+	except KeyError:
+		print("Unknown capital city.")
+		return None
+	except IndexError:
+		print("Error: Invalid index.")
+		return None
+	except UnicodeDecodeError:
+		print("Error: Invalid format of text, it is not UTF-8.")
+		return None
+	except OSError as error:
+		print("Error: system internal error {error}.")
 
 if __name__ == '__main__':
 	getCapitalByState()
