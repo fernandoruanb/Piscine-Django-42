@@ -1,140 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-        <head>
-                <meta charset="utf-8">
-                <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <meta name="author" content="Fernando Ruan">
-		<title>My Beautiful CV</title>
-                <style>
-
-		    body {
-			          align-items: center;
-                		  flex-direction: column;
-			          text-align: center;
-			          display: flex;
-		    }
-
-        footer {
-          margin-top: auto;
-        }
-
-		    main > section ul,
-                    main > section ol {
-			    display: inline-block;
-			    text-align: left;
-          margin: 0;
-          padding-left: 1.5em;
-          list-style-position: inside;
-		    }
-
-		    table {
-			border-collapse: collapse;
-			margin: 0 auto;
-		    }
-
-                    table, th, td {
-		      border: 1px solid #000;
-                    }
-
-                    td {
-                      text-align: center;
-                    }
-
-                    td ul, td ol {
-                      text-align: left;
-                    }
-		    div {
-			background-color: #0A1F44;
-		    }
-                </style>
-        </head>
-        <body>
-		<header>
-			<nav>
-				<a href="https://github.com/fernandoruanb">GitHub</a><br>
-      				<a href="https://www.linkedin.com/in/fernando-ruan">Linkedin</a><br><br>
-			</nav>
-		</header>
-		<main>
-                	<h1>My beautiful CV</h1>
-                	<img src="https://cdn.pixabay.com/photo/2024/05/16/17/56/ai-generated-8766611_1280.png" width="200" height="200">
-                  <br><br>
-			<table>
-				<tr>
-					<th>Name</th>
-					<th>Surname</th>
-					<th>Country</th>
-					<th>Languages</th>
-				</tr>
-				<tr>
-					<td>Fernando</td>
-					<td>Ruan</td>
-					<td>Brazil</td>
-					<td style="border-color:#424242">
-						<ul>
-							<li>Portuguese</li>
-							<li>English</li>
-						</ul>
-					</td>
-				</tr>
-			</table>
-      <section>
-        <h2>Description</h2>
-        <p>I am software engineer student and I love a learning culture experience in a company. I intend to study Cybersecurity, web and mobile and improve my qualifications with international professional certifications and also improve my knowledge with deep studies at university, bootcamps and international conferences</p>
-      </section>
-      			<!-- Soft skills section, human coder part -->
-			<section>
-				<div>
-                			<h2>Soft Skills</h2>
-                			<ul>
-                  				<li>Curiosity</li>
-                  				<li>Perseverance</li>
-                  				<li>Calm</li>
-                  				<li>Love new challenges</li>
-                  				<li>Work national or internationally in teams</li>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="author" content="Fernando Ruan">
+		<title>My Beautiful Curriculum</title>
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+		<style>
+			.profile-photo {
+				border-radius: 100%;
+				max-width: 200px;
+				border: 1px solid black;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="row">
+				<div class="col-12 text-center">
+					<section>
+						<h1>Fernando Ruan</h1>
+						<img class="profile-photo" src="https://cdn.pixabay.com/photo/2024/05/16/17/56/ai-generated-8766611_1280.png">
+					</section>
 				</div>
-                  	</ul>
-			</section>
-			<!-- Hard skills section, technologies learned until now -->
-			<section>
-				<h2>Hard Skills</h2>
-				<ol>
-					<li>C/C++, C#</li>
-					<li>Docker, VMs</li>
-					<li>HTML, CSS, Javascript, Typescript</li>
-					<li>Node.js, fastify, express</li>
-					<li>Python</li>
-				</ol>
-			</section>
-			<!-- That part is to show all the important projects that the candidate wants to demonstrate each skill learned -->
-			<section>
-				<h2>Portfolio/Projects</h2>
-				<table>
-					<tr>
-						<th>Project</th>
-						<th>Small description</th>
-						<th>Technologies</th>
-					</tr>
-					<tr>
-						<td>Transcendence</td>
-						<td>Web Application</td>
-						<td>Docker, microservices, node.js, jwt, 2FA, API, network, sqlite</td>
-					</tr>
-					<tr>
-						<td>Minishell</td>
-						<td>A small shell</td>
-						<td>Processes, Linux, pipes, binary tree, </td>
-					</tr>
-					<tr>
-						<td>Ft_Irc</td>
-						<td>An IRC Server</td>
-						<td style="border-color:#424242">Sockets, RFC, IRC Protocol, communication among computers</td>
-					</tr>
-				</table>
-			</section>
-		</main>
-		<footer>
-			<p><strong>Made by Fernando Ruan</strong></p>
-		</footer>
-        </body>
+			</div>
+			<div class="row">
+				<div class="col-6 text-center">
+					<section>
+						<h2>Personal information</h2>
+						<ul class="list-group list-group-flush">
+							<li class="list-group-item">Gender: Male</li>
+							<li class="list-group-item">Age: 24 years</li>
+							<li class="list-group-item"><a href="https://github.com/fernandoruanb">GitHub</a></li>
+						</ul>
+					</section>
+				</div>
+				<div class="col-6 text-center">
+					<section>
+						<h2>Contact information</h2>
+						<ul class="list-group list-group-flush">
+							<li class="list-group-item"><a href="https://www.linkedin.com/in/fernando-ruan">Linkedin</a></li>
+							<li class="list-group-item">Email: fernandosingaporefuture@gmail.com</li>
+							<li class="list-group-item">Address: São Paulo, capital</li>
+						</ul>
+					</section>
+				</div>
+			</div>
+		</body>
+	</div>
 </html>
